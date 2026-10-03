@@ -1,12 +1,36 @@
+/* =====================================================
+   ELEMENTOS PRINCIPALES
+===================================================== */
+
 const inicio = document.querySelector(".inicio");
 const boton = document.getElementById("btnFlores");
+
+
+/* =====================================================
+   PRECARGAR IMÁGENES
+   Se cargan desde el inicio para evitar demora después.
+===================================================== */
+
+const precargarA2 = new Image();
+precargarA2.src = "img/a2.jpeg";
+
+const precargarA3 = new Image();
+precargarA3.src = "img/a3.jpeg";
+
+const precargarRamo = new Image();
+precargarRamo.src = "img/ramo.png";
+
+
+/* =====================================================
+   BOTÓN DE LA PRIMERA PANTALLA
+===================================================== */
 
 boton.addEventListener("click", mostrarSegundaPantalla);
 
 
-/* =====================================
+/* =====================================================
    SEGUNDA PANTALLA
-===================================== */
+===================================================== */
 
 function mostrarSegundaPantalla() {
 
@@ -21,13 +45,32 @@ function mostrarSegundaPantalla() {
                 Flores amarillas para ti 🌻
             </p>
 
-            <p class="frase frase1">Para ti 🌻</p>
-            <p class="frase frase2">Eres especial 💛</p>
-            <p class="frase frase3">Siempre sonríe ✨</p>
 
-            <p class="frase frase4">Un detalle para ti 🌼</p>
-            <p class="frase frase5">Con mucho cariño 💛</p>
-            <p class="frase frase6">April Melanny 🌻</p>
+            <p class="frase frase1">
+                Para ti 🌻
+            </p>
+
+            <p class="frase frase2">
+                Eres especial 💛
+            </p>
+
+            <p class="frase frase3">
+                Siempre sonríe ✨
+            </p>
+
+
+            <p class="frase frase4">
+                Un detalle para ti 🌼
+            </p>
+
+            <p class="frase frase5">
+                Con mucho cariño 💛
+            </p>
+
+            <p class="frase frase6">
+                April Melanny 🌻
+            </p>
+
 
             <div class="centro-amor">
 
@@ -36,13 +79,16 @@ function mostrarSegundaPantalla() {
                 <img
                     src="img/a2.jpeg"
                     class="foto-centro"
-                    alt="April Melanny"
+                    alt="Foto"
                 >
 
             </div>
 
+
             <div id="campoFlores"></div>
+
             <div id="particulas"></div>
+
 
             <button id="btnFinal">
                 Siguiente ✨
@@ -51,106 +97,176 @@ function mostrarSegundaPantalla() {
         </section>
     `;
 
+
+    /* Crear efectos ligeros */
+
     crearFlores();
     crearParticulas();
 
-    document
-        .getElementById("btnFinal")
-        .addEventListener("click", mostrarFinal);
+
+    /* Botón siguiente */
+
+    const btnFinal =
+        document.getElementById("btnFinal");
+
+    btnFinal.addEventListener(
+        "click",
+        mostrarFinal
+    );
 }
 
 
-/* =====================================
-   FLORES SEGUNDA PANTALLA
-===================================== */
+/* =====================================================
+   FLORES DE LA SEGUNDA PANTALLA
+===================================================== */
 
 function crearFlores() {
 
     const campo =
         document.getElementById("campoFlores");
 
-    for (let i = 0; i < 85; i++) {
+
+    if (!campo) {
+        return;
+    }
+
+
+    /* Menos flores = mejor rendimiento en celular */
+
+    for (let i = 0; i < 35; i++) {
 
         const flor =
             document.createElement("span");
 
+
         flor.className =
             "girasol-campo";
 
-        flor.textContent = "🌻";
+
+        flor.textContent =
+            "🌻";
+
 
         flor.style.left =
             Math.random() * 100 + "%";
 
+
         flor.style.top =
-            (48 + Math.random() * 46) + "%";
+            (48 + Math.random() * 45) + "%";
+
 
         flor.style.fontSize =
-            (13 + Math.random() * 24) + "px";
+            (13 + Math.random() * 18) + "px";
+
 
         flor.style.animationDelay =
             Math.random() * 3 + "s";
+
 
         campo.appendChild(flor);
     }
 }
 
 
-/* =====================================
-   PARTÍCULAS
-===================================== */
+/* =====================================================
+   PARTÍCULAS DE LA SEGUNDA PANTALLA
+===================================================== */
 
 function crearParticulas() {
 
     const contenedor =
         document.getElementById("particulas");
 
-    for (let i = 0; i < 100; i++) {
+
+    if (!contenedor) {
+        return;
+    }
+
+
+    /* Reducidas para mejorar velocidad */
+
+    for (let i = 0; i < 30; i++) {
 
         const punto =
             document.createElement("span");
 
-        punto.className = "particula";
+
+        punto.className =
+            "particula";
+
 
         punto.style.left =
             Math.random() * 100 + "%";
 
+
         punto.style.top =
             Math.random() * 100 + "%";
 
+
         const tamano =
-            2 + Math.random() * 5;
+            2 + Math.random() * 3;
+
 
         punto.style.width =
             tamano + "px";
 
+
         punto.style.height =
             tamano + "px";
 
+
         punto.style.animationDelay =
             Math.random() * 4 + "s";
+
 
         contenedor.appendChild(punto);
     }
 }
 
 
-/* =====================================
-   PANTALLA FINAL
-===================================== */
+/* =====================================================
+   TERCERA PANTALLA
+===================================================== */
 
 function mostrarFinal() {
+
+    /*
+       Evita que se pueda presionar
+       varias veces rápidamente.
+    */
+
+    const btnFinal =
+        document.getElementById("btnFinal");
+
+
+    if (btnFinal) {
+
+        btnFinal.disabled = true;
+
+    }
+
+
+    /*
+       Cambiamos inmediatamente el contenido.
+       No esperamos a crear partículas.
+    */
 
     inicio.innerHTML = `
         <section class="pantalla-final">
 
-            <!-- LÍNEAS DORADAS -->
 
-            <div class="corazon-luz corazon-luz-izq"></div>
-            <div class="corazon-luz corazon-luz-der"></div>
+            <!-- CORAZÓN DORADO -->
+
+            <div
+                class="corazon-luz corazon-luz-izq">
+            </div>
+
+            <div
+                class="corazon-luz corazon-luz-der">
+            </div>
 
 
-            <!-- RAMO PNG -->
+            <!-- RAMO -->
 
             <div class="ramo-contenedor">
 
@@ -167,73 +283,114 @@ function mostrarFinal() {
 
             <!-- MARIPOSAS -->
 
-            <span class="mariposa m1">🦋</span>
-            <span class="mariposa m2">🦋</span>
-            <span class="mariposa m3">🦋</span>
-            <span class="mariposa m4">🦋</span>
-            <span class="mariposa m5">🦋</span>
-            <span class="mariposa m6">🦋</span>
+            <span class="mariposa m1">
+                🦋
+            </span>
+
+            <span class="mariposa m2">
+                🦋
+            </span>
+
+            <span class="mariposa m3">
+                🦋
+            </span>
+
+            <span class="mariposa m4">
+                🦋
+            </span>
 
 
             <!-- CORAZONES -->
 
-            <span class="corazon c1">💛</span>
-            <span class="corazon c2">💛</span>
-            <span class="corazon c3">💛</span>
-            <span class="corazon c4">💛</span>
-            <span class="corazon c5">💛</span>
-            <span class="corazon c6">💛</span>
+            <span class="corazon c1">
+                💛
+            </span>
+
+            <span class="corazon c2">
+                💛
+            </span>
+
+            <span class="corazon c3">
+                💛
+            </span>
+
+            <span class="corazon c4">
+                💛
+            </span>
 
 
             <!-- CONTENIDO -->
 
             <div class="contenido-final">
 
+
                 <p class="love-final">
                     ∞ LOVE YOU ♡
                 </p>
+
 
                 <h1>
                     April Melanny 💛
                 </h1>
 
+
                 <h2>
                     Flores amarillas para ti 🌻
                 </h2>
 
+
                 <img
                     src="img/a3.jpeg"
                     class="imagen-final"
-                    alt="April Melanny"
+                    alt="Foto"
                 >
+
 
                 <p class="texto-final">
 
-                    Un pequeño detalle hecho especialmente para ti.
-                    Espero que estas flores amarillas puedan sacarte
-                    una bonita sonrisa. 🌻✨
+                    Un pequeño detalle hecho especialmente
+                    para ti.
+
+                    Espero que estas flores amarillas
+                    puedan sacarte una bonita sonrisa.
+
+                    🌻✨
 
                 </p>
 
+
                 <div class="separador">
+
                     ─── 💛 ───
+
                 </div>
 
+
                 <button id="btnVolver">
+
                     Volver 🌻
+
                 </button>
 
+
             </div>
 
 
-            <!-- FLORES DE LAS ESQUINAS -->
+            <!-- GIRASOLES INFERIORES -->
 
-            <div class="jardin jardin-izquierdo">
-                🌻 🌻 🌻 🌻
+            <div
+                class="jardin jardin-izquierdo">
+
+                🌻 🌻 🌻
+
             </div>
 
-            <div class="jardin jardin-derecho">
-                🌻 🌻 🌻 🌻
+
+            <div
+                class="jardin jardin-derecho">
+
+                🌻 🌻 🌻
+
             </div>
 
 
@@ -241,83 +398,154 @@ function mostrarFinal() {
 
             <div id="efectosFinales"></div>
 
+
         </section>
     `;
 
-    crearEfectosFinales();
 
-    document
-        .getElementById("btnVolver")
-        .addEventListener("click", function () {
+    /* =================================================
+       BOTÓN VOLVER
+    ================================================= */
 
-            location.reload();
+    const btnVolver =
+        document.getElementById("btnVolver");
+
+
+    btnVolver.addEventListener(
+        "click",
+        volverInicio
+    );
+
+
+    /*
+       IMPORTANTE:
+
+       Primero dejamos que el navegador dibuje
+       la tercera pantalla.
+
+       Los efectos aparecen después.
+    */
+
+    requestAnimationFrame(function () {
+
+        requestAnimationFrame(function () {
+
+            setTimeout(function () {
+
+                crearEfectosFinales();
+
+            }, 350);
 
         });
+
+    });
 }
 
 
-/* =====================================
-   EFECTOS FINALES
-===================================== */
+/* =====================================================
+   EFECTOS DE LA TERCERA PANTALLA
+===================================================== */
 
 function crearEfectosFinales() {
 
     const contenedor =
-        document.getElementById("efectosFinales");
+        document.getElementById(
+            "efectosFinales"
+        );
 
 
-    /* DESTELLOS */
+    if (!contenedor) {
 
-    for (let i = 0; i < 120; i++) {
+        return;
+
+    }
+
+
+    /* =================================================
+       DESTELLOS
+       Solo 25 para que cargue rápido.
+    ================================================= */
+
+    for (let i = 0; i < 25; i++) {
 
         const brillo =
             document.createElement("span");
 
+
         brillo.className =
             "brillo-final";
+
 
         brillo.style.left =
             Math.random() * 100 + "%";
 
+
         brillo.style.top =
             Math.random() * 100 + "%";
 
+
         const tamano =
-            2 + Math.random() * 5;
+            2 + Math.random() * 3;
+
 
         brillo.style.width =
             tamano + "px";
 
+
         brillo.style.height =
             tamano + "px";
 
+
         brillo.style.animationDelay =
-            Math.random() * 4 + "s";
+            Math.random() * 3 + "s";
+
 
         contenedor.appendChild(brillo);
     }
 
 
-    /* PÉTALOS */
+    /* =================================================
+       PÉTALOS
+       Solo 5 para celular.
+    ================================================= */
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) {
 
         const petalo =
             document.createElement("span");
 
-        petalo.className = "petalo";
 
-        petalo.textContent = "🍂";
+        petalo.className =
+            "petalo";
+
+
+        petalo.textContent =
+            "🍂";
+
 
         petalo.style.left =
             Math.random() * 100 + "%";
 
+
         petalo.style.animationDelay =
-            Math.random() * 7 + "s";
+            Math.random() * 5 + "s";
+
 
         petalo.style.animationDuration =
-            (7 + Math.random() * 6) + "s";
+            (7 + Math.random() * 4) + "s";
+
 
         contenedor.appendChild(petalo);
     }
+}
+
+
+/* =====================================================
+   VOLVER AL INICIO
+===================================================== */
+
+function volverInicio() {
+
+    location.reload();
+
 }
