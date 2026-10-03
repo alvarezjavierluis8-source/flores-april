@@ -1,0 +1,1756 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #050300;
+}
+
+
+/* =====================================================
+   PRIMERA PANTALLA
+===================================================== */
+
+.inicio {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #8c6500 0%,
+            #4c3000 30%,
+            #211200 60%,
+            #080300 100%
+        );
+}
+
+
+/* CORAZÓN DE FONDO */
+
+.inicio::before {
+    content: "♡";
+
+    position: absolute;
+
+    font-size: 520px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px rgba(255, 215, 50, 0.18);
+
+    text-shadow:
+        0 0 20px #ffd700,
+        0 0 60px #ff9d00;
+
+    opacity: 0.5;
+}
+
+
+.inicio > * {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* LOVE YOU */
+
+.love {
+    color: #fff0a8;
+
+    font-size: 14px;
+    letter-spacing: 6px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px #ffd700;
+}
+
+
+/* TÍTULO */
+
+.inicio h1 {
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #ffd700,
+        0 0 30px #ffae00;
+}
+
+
+/* SUBTÍTULO */
+
+.inicio h2 {
+    margin: 7px 10px 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+    font-weight: normal;
+
+    color: #fff0a2;
+
+    text-shadow:
+        0 0 12px #ffd700;
+}
+
+
+/* FOTO PRINCIPAL */
+
+.imagen-principal {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #ffd700;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 20px #ffd700,
+        0 0 50px #ff9d00;
+
+    animation:
+        flotar 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+#btnFlores,
+#btnFinal,
+#btnVolver {
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 35px;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe45c,
+            #e49200
+        );
+
+    box-shadow:
+        0 0 15px #ffd700,
+        0 0 30px rgba(255, 170, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+
+#btnFlores:hover,
+#btnVolver:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px #ffd700;
+}
+
+
+/* =====================================================
+   SEGUNDA PANTALLA
+===================================================== */
+
+.universo {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #533900 0%,
+            #271600 45%,
+            #0c0500 75%,
+            #020100 100%
+        );
+}
+
+
+/* NOMBRE */
+
+.nombre-segunda {
+    position: absolute;
+
+    width: 100%;
+
+    top: 7%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    color: #fff5b5;
+
+    text-shadow:
+        0 0 12px #ffd700,
+        0 0 35px #ff9d00;
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo-segunda {
+    position: absolute;
+
+    top: 16%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    color: #ffe477;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+    font-style: italic;
+
+    text-shadow:
+        0 0 10px #ffd700;
+}
+
+
+/* FOTO CENTRAL */
+
+.centro-amor {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 15;
+}
+
+
+.foto-centro {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #ffd700;
+
+    position: relative;
+
+    z-index: 3;
+
+    box-shadow:
+        0 0 20px #ffd700,
+        0 0 50px #ff9d00;
+}
+
+
+/* RESPLANDOR */
+
+.resplandor {
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 220, 50, 0.7),
+            rgba(255, 160, 0, 0.2),
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    animation:
+        respirar 2s infinite alternate;
+}
+
+
+/* =====================================================
+   FRASES
+===================================================== */
+
+.frase {
+    position: absolute;
+
+    z-index: 20;
+
+    color: #ffe875;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    text-shadow:
+        0 0 8px #ffd700,
+        0 0 15px #ff9d00;
+}
+
+
+.frase1 {
+    left: 7%;
+    top: 27%;
+}
+
+
+.frase2 {
+    left: 7%;
+    top: 48%;
+}
+
+
+.frase3 {
+    left: 7%;
+    top: 68%;
+}
+
+
+.frase4 {
+    right: 7%;
+    top: 27%;
+}
+
+
+.frase5 {
+    right: 7%;
+    top: 48%;
+}
+
+
+.frase6 {
+    right: 7%;
+    top: 68%;
+}
+
+
+/* =====================================================
+   FLORES SEGUNDA PANTALLA
+===================================================== */
+
+#campoFlores {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+
+.girasol-campo {
+    position: absolute;
+
+    z-index: 8;
+
+    filter:
+        drop-shadow(0 0 6px #ffd700);
+
+    animation:
+        florMover 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   PARTÍCULAS
+===================================================== */
+
+#particulas {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+
+.particula {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #ffe766;
+
+    box-shadow:
+        0 0 7px #ffd700,
+        0 0 15px #ff9d00;
+
+    animation:
+        destello 2s infinite alternate;
+}
+
+
+/* BOTÓN SIGUIENTE */
+
+#btnFinal {
+    position: absolute;
+
+    z-index: 30;
+
+    bottom: 4%;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+#btnFinal:hover {
+    transform:
+        translateX(-50%)
+        scale(1.08);
+}
+
+
+/* =====================================================
+   PANTALLA FINAL
+===================================================== */
+
+.pantalla-final {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #9a7000 0%,
+            #684300 18%,
+            #382000 40%,
+            #170a00 68%,
+            #030100 100%
+        );
+}
+
+
+/* LUZ CENTRAL */
+
+.pantalla-final::before {
+    content: "";
+
+    position: absolute;
+
+    width: 800px;
+    height: 800px;
+
+    top: -250px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 205, 30, 0.35),
+            rgba(255, 170, 0, 0.12),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   RAMO PNG
+===================================================== */
+
+.ramo-contenedor {
+    position: absolute;
+
+    width: 430px;
+    height: 280px;
+
+    top: 1%;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 25;
+
+    animation:
+        flotarRamoPNG
+        3s ease-in-out infinite;
+}
+
+
+/* IMAGEN DEL RAMO */
+
+.ramo-png {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 0 10px #ffd700
+        )
+        drop-shadow(
+            0 0 30px rgba(255, 170, 0, 0.8)
+        );
+}
+
+
+/* AURA DEL RAMO */
+
+.ramo-contenedor .aura-ramo {
+    position: absolute;
+
+    width: 400px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 220, 60, 0.65),
+            rgba(255, 160, 0, 0.25),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        auraRamo 2s infinite alternate;
+}
+
+
+/* =====================================================
+   CORAZÓN DORADO CENTRAL
+===================================================== */
+
+.corazon-luz {
+    position: absolute;
+
+    width: 430px;
+    height: 580px;
+
+    top: 18%;
+
+    z-index: 3;
+
+    border:
+        3px solid
+        rgba(255, 215, 40, 0.65);
+
+    border-bottom-color:
+        transparent;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 20px rgba(255, 174, 0, 0.55);
+
+    opacity: 0.65;
+
+    animation:
+        brilloCorazon
+        2s infinite alternate;
+}
+
+
+/* LADO IZQUIERDO */
+
+.corazon-luz-izq {
+    left: 50%;
+
+    border-radius:
+        65% 45% 15% 75%;
+
+    transform-origin:
+        bottom left;
+
+    transform:
+        translateX(-100%)
+        rotate(-28deg);
+}
+
+
+/* LADO DERECHO */
+
+.corazon-luz-der {
+    right: 50%;
+
+    border-radius:
+        45% 65% 75% 15%;
+
+    transform-origin:
+        bottom right;
+
+    transform:
+        translateX(100%)
+        rotate(28deg);
+}
+
+
+/* =====================================================
+   CONTENIDO FINAL
+===================================================== */
+
+.contenido-final {
+    position: relative;
+
+    z-index: 20;
+
+    width: 620px;
+
+    margin-top: 280px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* LOVE YOU */
+
+.love-final {
+    color: #fff0a8;
+
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 0 10px #ffd700;
+}
+
+
+/* NOMBRE */
+
+.contenido-final h1 {
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #ffd700,
+        0 0 30px #ff9d00;
+}
+
+
+/* SUBTÍTULO */
+
+.contenido-final h2 {
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ffe895;
+
+    margin:
+        3px 0 12px;
+
+    text-shadow:
+        0 0 10px #ffd700;
+}
+
+
+/* FOTO FINAL */
+
+.imagen-final {
+    width: 210px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    border:
+        3px solid #ffd700;
+
+    box-shadow:
+        0 0 15px #ffd700,
+        0 0 35px #ff9d00;
+}
+
+
+/* MENSAJE */
+
+.texto-final {
+    max-width: 550px;
+
+    margin:
+        12px 15px 6px;
+
+    color: #fff5c1;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+
+/* SEPARADOR */
+
+.separador {
+    color: #ffd83d;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 10px #ffd700;
+}
+
+
+/* =====================================================
+   MARIPOSAS
+===================================================== */
+
+.mariposa {
+    position: absolute;
+
+    z-index: 12;
+
+    font-size: 48px;
+
+    filter:
+        sepia(1)
+        saturate(6)
+        drop-shadow(
+            0 0 12px #ffd700
+        );
+
+    animation:
+        mariposaVolar
+        4s ease-in-out infinite;
+}
+
+
+.m1 {
+    top: 14%;
+    left: 28%;
+}
+
+
+.m2 {
+    top: 34%;
+    left: 31%;
+}
+
+
+.m3 {
+    top: 14%;
+    right: 28%;
+}
+
+
+.m4 {
+    top: 34%;
+    right: 31%;
+}
+
+
+.m5 {
+    top: 53%;
+    left: 28%;
+}
+
+
+.m6 {
+    top: 53%;
+    right: 28%;
+}
+
+
+/* =====================================================
+   CORAZONES AMARILLOS
+===================================================== */
+
+.corazon {
+    position: absolute;
+
+    z-index: 10;
+
+    filter:
+        drop-shadow(
+            0 0 12px #ffd700
+        );
+
+    animation:
+        corazonFlotar
+        3s ease-in-out infinite;
+}
+
+
+.c1 {
+    left: 25%;
+    top: 23%;
+
+    font-size: 35px;
+}
+
+
+.c2 {
+    left: 36%;
+    top: 18%;
+
+    font-size: 25px;
+}
+
+
+.c3 {
+    right: 25%;
+    top: 23%;
+
+    font-size: 35px;
+}
+
+
+.c4 {
+    right: 36%;
+    top: 18%;
+
+    font-size: 25px;
+}
+
+
+.c5 {
+    left: 31%;
+    top: 60%;
+
+    font-size: 32px;
+}
+
+
+.c6 {
+    right: 31%;
+    top: 60%;
+
+    font-size: 32px;
+}
+
+
+/* =====================================================
+   GIRASOLES INFERIORES
+===================================================== */
+
+.jardin {
+    position: absolute;
+
+    z-index: 8;
+
+    bottom: -25px;
+
+    font-size: 100px;
+
+    letter-spacing: -25px;
+
+    filter:
+        drop-shadow(
+            0 0 12px #ffb000
+        );
+
+    opacity: 0.95;
+}
+
+
+.jardin-izquierdo {
+    left: -25px;
+
+    transform:
+        rotate(6deg);
+}
+
+
+.jardin-derecho {
+    right: -25px;
+
+    transform:
+        rotate(-6deg);
+}
+
+
+/* =====================================================
+   EFECTOS FINALES
+===================================================== */
+
+#efectosFinales {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+/* DESTELLOS */
+
+.brillo-final {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        #fff4a5;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 18px #ff9d00;
+
+    animation:
+        destelloFinal
+        2s infinite alternate;
+}
+
+
+/* PÉTALOS */
+
+.petalo {
+    position: absolute;
+
+    top: -50px;
+
+    z-index: 9;
+
+    font-size: 24px;
+
+    filter:
+        sepia(1)
+        saturate(8)
+        drop-shadow(
+            0 0 6px #ffd700
+        );
+
+    animation:
+        petaloCaer
+        linear infinite;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px);
+    }
+}
+
+
+@keyframes respirar {
+
+    from {
+        opacity: 0.4;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.1);
+    }
+}
+
+
+@keyframes florMover {
+
+    0%,
+    100% {
+        transform:
+            rotate(-4deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(4deg)
+            translateY(-7px);
+    }
+}
+
+
+@keyframes destello {
+
+    from {
+        opacity: 0.2;
+
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1.8);
+    }
+}
+
+
+/* RAMO */
+
+@keyframes flotarRamoPNG {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-10px);
+    }
+}
+
+
+/* AURA */
+
+@keyframes auraRamo {
+
+    from {
+        opacity: 0.4;
+
+        transform:
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1.12);
+    }
+}
+
+
+/* MARIPOSAS */
+
+@keyframes mariposaVolar {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translate(20px, -20px)
+            rotate(8deg)
+            scale(1.1);
+    }
+}
+
+
+/* CORAZONES */
+
+@keyframes corazonFlotar {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            scale(1.12);
+    }
+}
+
+
+/* CORAZÓN DORADO */
+
+@keyframes brilloCorazon {
+
+    from {
+        opacity: 0.25;
+
+        filter:
+            drop-shadow(
+                0 0 5px #ffd700
+            );
+    }
+
+    to {
+        opacity: 0.85;
+
+        filter:
+            drop-shadow(
+                0 0 18px #ffd700
+            );
+    }
+}
+
+
+/* DESTELLOS */
+
+@keyframes destelloFinal {
+
+    from {
+        opacity: 0.15;
+
+        transform:
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(2);
+    }
+}
+
+
+/* PÉTALOS */
+
+@keyframes petaloCaer {
+
+    0% {
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(80px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   PANTALLAS GRANDES
+===================================================== */
+
+@media (min-width: 1200px) {
+
+    /* RAMO */
+
+    .ramo-contenedor {
+        width: 470px;
+        height: 300px;
+
+        top: 1%;
+    }
+
+
+    .ramo-contenedor .aura-ramo {
+        width: 440px;
+        height: 280px;
+    }
+
+
+    /* CONTENIDO */
+
+    .contenido-final {
+        width: 720px;
+
+        margin-top: 310px;
+    }
+
+
+    .love-final {
+        font-size: 15px;
+
+        letter-spacing: 7px;
+    }
+
+
+    .contenido-final h1 {
+        font-size: 55px;
+    }
+
+
+    .contenido-final h2 {
+        font-size: 31px;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* FOTO */
+
+    .imagen-final {
+        width: 235px;
+        height: 235px;
+
+        border:
+            4px solid #ffd700;
+    }
+
+
+    /* TEXTO */
+
+    .texto-final {
+        max-width: 600px;
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    /* BOTÓN */
+
+    #btnVolver {
+        padding:
+            15px 40px;
+
+        font-size: 15px;
+    }
+
+
+    /* CORAZÓN CENTRAL */
+
+    .corazon-luz {
+        width: 470px;
+        height: 650px;
+
+        top: 15%;
+    }
+
+
+    /* MARIPOSAS */
+
+    .mariposa {
+        font-size: 55px;
+    }
+
+
+    .m1 {
+        left: 29%;
+        top: 14%;
+    }
+
+
+    .m2 {
+        left: 32%;
+        top: 34%;
+    }
+
+
+    .m3 {
+        right: 29%;
+        top: 14%;
+    }
+
+
+    .m4 {
+        right: 32%;
+        top: 34%;
+    }
+
+
+    .m5 {
+        left: 29%;
+        top: 54%;
+    }
+
+
+    .m6 {
+        right: 29%;
+        top: 54%;
+    }
+
+
+    /* CORAZONES */
+
+    .c1 {
+        left: 25%;
+        top: 23%;
+
+        font-size: 40px;
+    }
+
+
+    .c2 {
+        left: 36%;
+        top: 18%;
+
+        font-size: 30px;
+    }
+
+
+    .c3 {
+        right: 25%;
+        top: 23%;
+
+        font-size: 40px;
+    }
+
+
+    .c4 {
+        right: 36%;
+        top: 18%;
+
+        font-size: 30px;
+    }
+
+
+    .c5 {
+        left: 31%;
+        top: 60%;
+
+        font-size: 35px;
+    }
+
+
+    .c6 {
+        right: 31%;
+        top: 60%;
+
+        font-size: 35px;
+    }
+
+
+    /* GIRASOLES */
+
+    .jardin {
+        bottom: -30px;
+
+        font-size: 120px;
+
+        letter-spacing: -30px;
+    }
+
+
+    .jardin-izquierdo {
+        left: 0;
+    }
+
+
+    .jardin-derecho {
+        right: 0;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* PORTADA */
+
+    .inicio h1 {
+        font-size: 37px;
+    }
+
+
+    .inicio h2 {
+        font-size: 25px;
+    }
+
+
+    .inicio::before {
+        font-size: 340px;
+    }
+
+
+    .imagen-principal {
+        width: 205px;
+        height: 205px;
+    }
+
+
+    /* SEGUNDA PANTALLA */
+
+    .nombre-segunda {
+        top: 6%;
+
+        font-size: 34px;
+    }
+
+
+    .subtitulo-segunda {
+        top: 13%;
+
+        font-size: 15px;
+    }
+
+
+    .centro-amor {
+        width: 195px;
+        height: 195px;
+    }
+
+
+    .resplandor {
+        width: 270px;
+        height: 270px;
+    }
+
+
+    .frase {
+        font-size: 10px;
+
+        max-width: 85px;
+    }
+
+
+    .frase1,
+    .frase2,
+    .frase3 {
+        left: 2%;
+    }
+
+
+    .frase4,
+    .frase5,
+    .frase6 {
+        right: 2%;
+    }
+
+
+    /* RAMO */
+
+    .ramo-contenedor {
+        width: 260px;
+        height: 175px;
+
+        top: 1%;
+    }
+
+
+    .ramo-contenedor .aura-ramo {
+        width: 240px;
+        height: 160px;
+    }
+
+
+    /* CONTENIDO */
+
+    .contenido-final {
+        width: 94%;
+
+        margin-top: 175px;
+    }
+
+
+    .love-final {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .contenido-final h1 {
+        font-size: 31px;
+    }
+
+
+    .contenido-final h2 {
+        font-size: 19px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .imagen-final {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    .texto-final {
+        max-width: 330px;
+
+        margin-top: 8px;
+
+        font-size: 12px;
+
+        line-height: 1.4;
+    }
+
+
+    #btnVolver {
+        padding:
+            10px 25px;
+
+        font-size: 12px;
+    }
+
+
+    /* CORAZÓN CENTRAL */
+
+    .corazon-luz {
+        width: 190px;
+        height: 390px;
+
+        top: 18%;
+
+        border-width: 2px;
+    }
+
+
+    /* MARIPOSAS */
+
+    .mariposa {
+        font-size: 28px;
+    }
+
+
+    .m1 {
+        left: 8%;
+        top: 14%;
+    }
+
+
+    .m2 {
+        left: 13%;
+        top: 33%;
+    }
+
+
+    .m3 {
+        right: 8%;
+        top: 14%;
+    }
+
+
+    .m4 {
+        right: 13%;
+        top: 33%;
+    }
+
+
+    .m5 {
+        left: 7%;
+        top: 54%;
+    }
+
+
+    .m6 {
+        right: 7%;
+        top: 54%;
+    }
+
+
+    /* CORAZONES */
+
+    .c1 {
+        left: 4%;
+        top: 23%;
+
+        font-size: 22px;
+    }
+
+
+    .c2 {
+        left: 22%;
+        top: 17%;
+
+        font-size: 17px;
+    }
+
+
+    .c3 {
+        right: 4%;
+        top: 23%;
+
+        font-size: 22px;
+    }
+
+
+    .c4 {
+        right: 22%;
+        top: 17%;
+
+        font-size: 17px;
+    }
+
+
+    .c5 {
+        left: 10%;
+        top: 60%;
+
+        font-size: 20px;
+    }
+
+
+    .c6 {
+        right: 10%;
+        top: 60%;
+
+        font-size: 20px;
+    }
+
+
+    /* GIRASOLES */
+
+    .jardin {
+        bottom: -10px;
+
+        font-size: 55px;
+
+        letter-spacing: -18px;
+    }
+
+
+    .jardin-izquierdo {
+        left: -25px;
+    }
+
+
+    .jardin-derecho {
+        right: -25px;
+    }
+
+
+    .petalo {
+        font-size: 17px;
+    }
+}
